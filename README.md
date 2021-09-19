@@ -416,7 +416,7 @@ hooman
                 type number
                 ==>
                 value 
-                    <<number[.]
+                    <<number[.2]
                         \d+(\.\d+)?
                     >>
         ...
@@ -450,7 +450,7 @@ hooman
                 type price
                 ==>
                 value 
-                    <<number[.]
+                    <<number[.2]
                         \d+(\.\d+)?
                     >>
             +
