@@ -1,4 +1,4 @@
-# Hooman metalanguage specification - Version 2
+# Hooman metalanguage specifications - Version 2
 
 __Creator: Rodolfo Calzetti__
 
