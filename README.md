@@ -257,6 +257,8 @@ company
 
 It is possible to define an object language by imposing constraints on both complex values (structure constraints) and simple values (string validation using regular expressions and javascript assignment rules).
 
+For security, there cannot be two syntactic sections at the same time, one in the main document and the other in an included document. Instead, it is allowed that there are multiple syntactic sections in different included documents.
+
 ### Constraints on complex values
 
 Below ```hooman/syntax/structure``` path you can write the subdocument which is a mandatory template for what is outside the "hooman" branch.
