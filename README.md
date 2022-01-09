@@ -424,7 +424,7 @@ hooman
         ...
 ```
 
-## Assignment rules
+### Assignment rules
 
 You can use rules to assign values, not just to validate them. 
 If the post-condition was a javascript formula, indicated by the "js" tag, then this formula will be used to value the occurrences of the variable in the document:
@@ -503,6 +503,50 @@ hooman
                 >>
             ...
 ```
+
+### Strongly syntactic document
+
+What if I wanted to write a document containing only syntactic rules and structure with a mandatory main branch?
+Of course I would raise an exception because my document, having no data, would not contain the mandatory node.
+
+Let's see an example:
+
+```
+hooman 
+    version 2
+    syntax
+        structure
+	    mainvariable !
+	        otherdata
+```
+
+A Hooman parser should report an error since mainvariable is missing.
+
+To overcome this problem, Hooman's metasyntax is to declare that a document is "strongly" syntactic by placing an exclamation point after the "syntax" keyword:
+
+```
+hooman 
+    version 2
+    syntax !
+        structure
+	    mainvariable !
+	        otherdata
+```
+
+In this case, a Hooman parser should allow the absence of data and prevent it from being written.
+The following document is WRONG as it contains data ( "mainvariable" at the end ):
+
+```
+hooman 
+    version 2
+    syntax !
+        structure
+	    mainvariable !
+                otherdata
+
+mainvariable
+```
+
 
 ## Security
 
