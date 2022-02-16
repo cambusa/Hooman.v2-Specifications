@@ -460,7 +460,7 @@ hooman
                 ==>
                 value 
                     <<js
-                        branch.quantity * branch.price
+                        BRANCH.quantity * BRANCH.price
                     >>
 
 invoice
@@ -478,10 +478,12 @@ invoice
 Thus, a hooman parser can calculate the values automatically: in this case it will calculate the "amount" variable.
 
 To write the formula, some useful items are available:
-* ```hoo```: a JSON containing the whole document (except the hooman branch);
-* ```branch```: a JSON containing the siblings of the current variable;
-* ```self```: the variable itself;
-* ```path```: an array with the path from ```hoo``` (excluded) to ```branch```.
+* ```HOO```: a JSON containing the whole document (except the hooman branch);
+* ```BRANCH```: a JSON containing the siblings of the current variable;
+* ```SELF```: the variable itself;
+* ```PATH```: an array with the path from ```HOO``` (excluded) to ```BRANCH```.
+
+Hooman variables are converted to lowercase in the script so that misunderstandings are avoided.
 
 There's a "library" section for collect javascript functions useful to assignment rules:
 
